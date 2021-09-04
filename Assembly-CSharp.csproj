@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BFAD555A-22B4-87EF-D694-6E15CADABDE4}</ProjectGuid>
+    <ProjectGuid>{C744C476-09BF-1CA1-EF79-4384AFE5D9F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,12 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\balance.cs" />
-    <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\arms.cs" />
     <Compile Include="Assets\Scripts\grab.cs" />
+    <Compile Include="Assets\Scripts\playerController.cs" />
+    <Compile Include="Assets\Scripts\balance.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Assets\mixed_crate_one\read_me.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
