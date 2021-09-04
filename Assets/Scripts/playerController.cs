@@ -18,10 +18,12 @@ public class playerController : MonoBehaviour
     void Start()
     {
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
-        for(int i = 0; i < colliders.Length; i++)
+        Debug.Log("Length"+colliders.Length);
+        for (int i = 0; i < colliders.Length; i++)
         {
             for(int k = i + 1; k < colliders.Length; i++)
             {
+                Debug.Log(i);
                 Physics2D.IgnoreCollision(colliders[i], colliders[k]);
             }
         }
