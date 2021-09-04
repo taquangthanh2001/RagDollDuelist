@@ -13,6 +13,9 @@ public class playerController : MonoBehaviour
     public float positionRadius;
     public LayerMask ground;
     public Transform playerPos;
+    public GameObject leftLeg;
+    public GameObject rightLeg;
+    public float kickSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -55,5 +58,15 @@ public class playerController : MonoBehaviour
             Debug.Log("JUMPING");
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
         }
+        /*
+        //make player kick when k key z(right leg) or key c(left leg) pressed
+        if (Input.GetKey(KeyCode.Z))
+        {
+            rightLeg.transform.Rotate(Vector3.right * kickSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.C))
+        {
+            leftLeg.transform.Rotate(-Vector3.left * kickSpeed * Time.deltaTime);
+        }*/
     }
 }
