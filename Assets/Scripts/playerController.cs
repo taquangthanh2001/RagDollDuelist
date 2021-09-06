@@ -24,9 +24,9 @@ public class playerController : MonoBehaviour
          
         for (int i = 0; i < colliders.Length; i++)
         {
-            for(int k = i + 1; k < colliders.Length; k++)
+            for(int j = i + 1; j < colliders.Length; j++)
             {
-                Physics2D.IgnoreCollision(colliders[i], colliders[k]);
+                Physics2D.IgnoreCollision(colliders[i], colliders[j]);
             }
         }
     }
@@ -58,15 +58,15 @@ public class playerController : MonoBehaviour
             Debug.Log("JUMPING");
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
         }
-        /*
+        
         //make player kick when k key z(right leg) or key c(left leg) pressed
         if (Input.GetKey(KeyCode.Z))
         {
-            rightLeg.transform.Rotate(Vector3.right * kickSpeed * Time.deltaTime);
+            anim.Play("kickRight");
         }
         if (Input.GetKey(KeyCode.C))
         {
-            leftLeg.transform.Rotate(-Vector3.left * kickSpeed * Time.deltaTime);
-        }*/
+            anim.Play("kickLeft");
+        }
     }
 }

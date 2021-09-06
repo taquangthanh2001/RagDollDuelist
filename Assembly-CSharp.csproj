@@ -57,10 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\arms.cs" />
+    <Compile Include="Assets\Scripts\ballBound.cs" />
     <Compile Include="Assets\Scripts\grab.cs" />
     <Compile Include="Assets\Scripts\playerController.cs" />
     <Compile Include="Assets\Scripts\balance.cs" />
-    <Compile Include="Assets\Scripts\ballBound.cs" />
+    <Compile Include="Assets\Scripts\ragdollArms.cs" />
+    <Compile Include="Assets\Scripts\ragdollEnemyWalk.cs" />
+    <Compile Include="Assets\enemyIdle.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Assets\mixed_crate_one\read_me.txt" />
