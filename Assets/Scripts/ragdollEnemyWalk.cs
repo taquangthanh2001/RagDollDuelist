@@ -27,25 +27,20 @@ public class ragdollEnemyWalk : MonoBehaviour
         }
         if(dist > 0)
         {
-            inRange = false;
             if(onLeft)
             {
                 anim.Play("WalkBack");
                 rb.AddForce(Vector2.left * enemySpeed);
-                Debug.Log("left");
             }
             else
             {
                 anim.Play("Walk");
                 rb.AddForce(Vector2.right * enemySpeed);
-                Debug.Log("right");
             }    
         }
         else
         {
-            inRange = true;
             anim.Play("Idle");
-            Debug.Log("idle");
         }
     }
 }
