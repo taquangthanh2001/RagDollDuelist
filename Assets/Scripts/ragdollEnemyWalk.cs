@@ -33,13 +33,13 @@ public class ragdollEnemyWalk : MonoBehaviour
             if(onRight)
             {
                 anim.Play("WalkBack");
-                rb.AddForce(Vector2.left * enemySpeed * Time.deltaTime);
+                rb.AddForce(Vector2.left * enemySpeed);
                 Debug.Log("left");
             }
             else
             {
                 anim.Play("Walk");
-                rb.AddForce(Vector2.right * enemySpeed * Time.deltaTime);
+                rb.AddForce(Vector2.right * enemySpeed);
                 Debug.Log("right");
             }    
         }
