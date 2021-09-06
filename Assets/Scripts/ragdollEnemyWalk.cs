@@ -19,7 +19,7 @@ public class ragdollEnemyWalk : MonoBehaviour
         dist = Vector2.Distance(target.transform.position, hips.transform.position);
         if(target.transform.position.x < hips.transform.position.x)
         {
-           onLeft = true;
+            onLeft = true;
         }
         else
         {
