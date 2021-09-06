@@ -12,8 +12,7 @@ public class ragdollEnemyWalk : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public int enemySpeed = 6;
-    public float distToPlayer;
-
+   
     void Update()
     {
         dist = Vector2.Distance(target.transform.position, hips.transform.position);
@@ -27,6 +26,7 @@ public class ragdollEnemyWalk : MonoBehaviour
         }
         if(dist > 0)
         {
+            inRange = true;
             if(onLeft)
             {
                 anim.Play("WalkBack");
@@ -40,6 +40,7 @@ public class ragdollEnemyWalk : MonoBehaviour
         }
         else
         {
+            inRange = false;
             anim.Play("Idle");
         }
     }
