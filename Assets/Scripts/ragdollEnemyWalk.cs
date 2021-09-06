@@ -19,6 +19,8 @@ public class ragdollEnemyWalk : MonoBehaviour
         dist = Vector2.Distance(target.transform.position, hips.transform.position);
         if(target.transform.position.x < hips.transform.position.x)
         {
+            Debug.Log(target.transform.position.x);
+            Debug.Log(hips.transform.position.x);
             onRight = true;
         }
         else
@@ -31,18 +33,21 @@ public class ragdollEnemyWalk : MonoBehaviour
             if(onRight)
             {
                 anim.Play("WalkBack");
-                rb.AddForce(Vector2.left * enemySpeed);
+                rb.AddForce(Vector2.left * enemySpeed * Time.deltaTime);
+                Debug.Log("left");
             }
             else
             {
                 anim.Play("Walk");
-                rb.AddForce(Vector2.right * enemySpeed);
+                rb.AddForce(Vector2.right * enemySpeed * Time.deltaTime);
+                Debug.Log("right");
             }    
         }
         else
         {
             inRange = true;
             anim.Play("Idle");
+            Debug.Log("idle");
         }
     }
 }
