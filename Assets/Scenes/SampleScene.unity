@@ -686,7 +686,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.5}
-  m_ConnectedAnchor: {x: 0.5053482, y: 0.40466034}
+  m_ConnectedAnchor: {x: 0.50534725, y: 0.40466034}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2035,7 +2035,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.5}
-  m_ConnectedAnchor: {x: 0.3499999, y: -0.7946569}
+  m_ConnectedAnchor: {x: 0.35000038, y: -0.7946569}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2236,7 +2236,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00645063, y: -0.4946805}
+  m_ConnectedAnchor: {x: -0.00645063, y: -0.4946807}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2332,7 +2332,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.5}
-  m_ConnectedAnchor: {x: -0.49834776, y: 0.40466034}
+  m_ConnectedAnchor: {x: -0.49834824, y: 0.40466034}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2772,7 +2772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979991011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.94, y: 0, z: 0}
+  m_LocalPosition: {x: 7.67, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 544305981}
@@ -2801,10 +2801,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a36bc5a37ea7744a1e6f4a7fc84773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1066103493}
+  target: {fileID: 547345315}
   dist: 0
   hips: {fileID: 1370656540}
-  onRight: 0
+  onLeft: 0
   inRange: 0
   anim: {fileID: 979991013}
   rb: {fileID: 1370656545}
@@ -3072,7 +3072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066103493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.96, y: 0, z: 0}
+  m_LocalPosition: {x: -5.19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 321432763}
