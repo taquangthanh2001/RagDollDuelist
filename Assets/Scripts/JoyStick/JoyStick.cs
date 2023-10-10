@@ -1,33 +1,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class JoyStick : MonoBehaviour
 {
     [SerializeField] protected GameObject joystick;
     [SerializeField] protected GameObject joystickBG;
-    [SerializeField] protected GameObject panel;
+    [FormerlySerializedAs("panel")] [SerializeField] protected GameObject bgJoyStickPanel;
     internal Vector2 joystickVec;
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriginalPos;
     private float joystickRadius;
-    public Vector2 joystickVecDf;
-    public Vector2 joystickVecMove;
+    internal Vector2 joystickVecDf;
+    internal Vector2 joystickVecMove;
+
+    internal bool isMoveByJoystick = false;
+
+
+    private static JoyStick _instance;
+    public static JoyStick Instance
+    {
+        get => _instance;
+        private set { _instance = value; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
+        if (_instance == null)
+            Instance = this;
+
         joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 2.5f;
     }
 
     public void PointerDown()
     {
-        panel.SetActive(true);
+        bgJoyStickPanel.SetActive(true);
         joystick.transform.position = Input.mousePosition;
         joystickBG.transform.position = Input.mousePosition;
         joystickTouchPos = Input.mousePosition;
         joystickVecDf = joystick.GetComponent<RectTransform>().anchoredPosition;
+        isMoveByJoystick = true;
     }
 
     public void Drag(BaseEventData baseEventData)
@@ -53,9 +69,10 @@ public class JoyStick : MonoBehaviour
 
     public void PointerUp()
     {
+        isMoveByJoystick = false;
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOriginalPos;
         joystickBG.transform.position = joystickOriginalPos;
-        panel.SetActive(false);
+        bgJoyStickPanel.SetActive(false);
     }
 }

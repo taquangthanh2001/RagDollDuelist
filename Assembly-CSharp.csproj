@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ragdollEnemyWalk.cs" />
+     <Compile Include="Assets\Scripts\ControlWeapon.cs" />
      <Compile Include="Assets\Scripts\player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\ballBound.cs" />
      <Compile Include="Assets\Scripts\player\balance.cs" />

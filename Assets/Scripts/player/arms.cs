@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,22 @@ using UnityEngine;
 public class arms : MonoBehaviour
 {
     int speed = 300;
-    public Rigidbody2D rb;
-    public Camera cam;
-    public KeyCode mouseButton;
+    private Rigidbody2D _rb;
+    [SerializeField] protected KeyCode mouseButton;
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        Vector3 playerPos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, 
-                                        cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        Vector3 difference = playerPos - transform.position;
+        Vector3 playerPos = JoyStick.Instance.joystickVecMove;
+        Vector3 difference = playerPos - (Vector3)JoyStick.Instance.joystickVecDf;
         float rotationZ = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
-        if(Input.GetKey(mouseButton))
+        if (Input.GetKey(mouseButton))
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotationZ, speed * Time.fixedDeltaTime));
+            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, rotationZ, speed * Time.fixedDeltaTime));
         }
     }
 }
