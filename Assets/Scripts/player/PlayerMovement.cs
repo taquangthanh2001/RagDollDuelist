@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : Movement
@@ -8,11 +6,28 @@ public class PlayerMovement : Movement
     public Rigidbody2D rb;
     public float jumpForce;
     public float playerSpeed;
-    private bool isOnGround;
+    private bool _isOnGround;
     public float positionRadius;
     public LayerMask ground;
     public Transform playerPos;
     public JoyStick movementJoystick;
+
+    protected static PlayerMovement instance;
+
+    public static PlayerMovement Instance
+    {
+        get => instance;
+        protected set {value = instance;}
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     protected override void MoveByTarget()
     {
@@ -21,36 +36,18 @@ public class PlayerMovement : Movement
             if (movementJoystick.joystickVecMove.x > movementJoystick.joystickVecDf.x)
             {
                 anim.Play("Walk");
-                rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
+                rb.AddForce(Vector2.right * (playerSpeed * Time.deltaTime));
             }
             else
             {
                 anim.Play("WalkBack");
-                rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
+                rb.AddForce(Vector2.left * (playerSpeed * Time.deltaTime));
             }
         }
         else
         {
             anim.Play("idle");
         }
-
-        // if(Input.GetAxisRaw("Horizontal") != 0)
-        // {
-        //     if(Input.GetAxisRaw("Horizontal") > 0)
-        //     {
-        //         anim.Play("Walk");
-        //         rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-        //     }
-        //     else
-        //     {
-        //         anim.Play("WalkBack");
-        //         rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
-        //     }
-        // }
-        // else
-        // {
-        //     anim.Play("Idle");
-        // }
         base.MoveByTarget();
     }
 
@@ -66,10 +63,15 @@ public class PlayerMovement : Movement
         //         isJumb = false;
         //     }
         // }
-        isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-        if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
+        _isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
+        if (_isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+            rb.AddForce(Vector2.up * (jumpForce * Time.deltaTime));
         }
+    }
+
+    public Vector3  GetPlayerPos()
+    {
+        return rb.transform.position;
     }
 }

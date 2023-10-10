@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -38,6 +37,7 @@ public class JoyStick : MonoBehaviour
 
     public void PointerDown()
     {
+        // Commons.SetSatus(true);
         bgJoyStickPanel.SetActive(true);
         joystick.transform.position = Input.mousePosition;
         joystickBG.transform.position = Input.mousePosition;
@@ -69,6 +69,7 @@ public class JoyStick : MonoBehaviour
 
     public void PointerUp()
     {
+        // Commons.SetSatus(false);
         isMoveByJoystick = false;
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOriginalPos;
