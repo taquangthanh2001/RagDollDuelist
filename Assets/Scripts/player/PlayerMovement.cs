@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 public class PlayerMovement : Movement
@@ -17,7 +18,7 @@ public class PlayerMovement : Movement
     public static PlayerMovement Instance
     {
         get => instance;
-        protected set {value = instance;}
+        protected set { value = instance; }
     }
 
     protected override void Start()
@@ -48,6 +49,7 @@ public class PlayerMovement : Movement
         {
             anim.Play("idle");
         }
+
         base.MoveByTarget();
     }
 
@@ -62,7 +64,14 @@ public class PlayerMovement : Movement
         //         rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
         //         isJumb = false;
         //     }
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //     JumpBarPlayer.Instance.SetStatusActiveJumpBar(true);
+        // if (JumpBarPlayer.Instance.isJump)
+        // {
+        //     rb.AddForce(Vector2.up * (jumpForce * Time.deltaTime));
         // }
+
         _isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
         if (_isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         {
@@ -70,7 +79,7 @@ public class PlayerMovement : Movement
         }
     }
 
-    public Vector3  GetPlayerPos()
+    public Vector3 GetPlayerPos()
     {
         return rb.transform.position;
     }
