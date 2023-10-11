@@ -5905,6 +5905,7 @@ GameObject:
   - component: {fileID: 1066103494}
   - component: {fileID: 1066103496}
   - component: {fileID: 1066103497}
+  - component: {fileID: 1066103498}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5972,6 +5973,29 @@ MonoBehaviour:
     m_Bits: 64
   playerPos: {fileID: 1615006906}
   movementJoystick: {fileID: 722494912}
+--- !u!114 &1066103498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066103493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83792458da22ecd4581f018e4a450044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgFace: {fileID: 1206770532}
+  imgBody: {fileID: 1206770532}
+  imgHip: {fileID: 547345320}
+  imgHandR1: {fileID: 1103207232}
+  imgHandR2: {fileID: 1877581885}
+  imgHandL1: {fileID: 1374657481}
+  imgHandL2: {fileID: 661913339}
+  imgLegR1: {fileID: 1877581885}
+  imgLegR2: {fileID: 134545782}
+  imgLegL1: {fileID: 617009404}
+  imgLegL2: {fileID: 1447820925}
 --- !u!1 &1103207227
 GameObject:
   m_ObjectHideFlags: 0

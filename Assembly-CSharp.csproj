@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\UiGamePlay\Skin\ShopCellView.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+     <Compile Include="Assets\Scripts\Player\LoadUiPlayer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\IEnhancedScrollerDelegate.cs" />
      <Compile Include="Assets\Scripts\Player\playerController.cs" />
