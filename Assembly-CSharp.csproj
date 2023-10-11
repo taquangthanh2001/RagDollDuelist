@@ -85,6 +85,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+     <Compile Include="Assets\Scripts\SO\WeaponSo.cs" />
      <Compile Include="Assets\Scripts\Player\arms.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\Scripts\Base\HpBase.cs" />
@@ -150,6 +151,7 @@
      <Folder Include="Assets\Scripts\SO" />
      <None Include="Assets\Assets\mixed_crate_one\read_me.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Assets\BackGrounds\parallax-industrial-pack_0\parallax-industrial-pack" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
@@ -199,7 +201,7 @@
      <Folder Include="Assets\Utils\EnhancedScroller v2\Tutorials" />
      <None Include="Assets\Utils\EnhancedScroller v2\readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-     <Folder Include="Assets\Prefabs" />
+     <Folder Include="Assets\Resources\Prefabs" />
      <Folder Include="Assets\Assets" />
      <Folder Include="Assets\Assets\BackGrounds\parallax-industrial-pack_0\__MACOSX" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

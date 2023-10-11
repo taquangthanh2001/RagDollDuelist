@@ -15,7 +15,7 @@ namespace Resources.Scripts.UiGamePlay
 
         private void OnClickSkinBtn()
         {
-            _go = UnityEngine.Resources.Load("MyPrefab") as GameObject;
+            _go = UnityEngine.Resources.Load("Prefabs/Shop") as GameObject;
             Instantiate(_go, transform.position + Vector3.up, Quaternion.identity);
         }
     }
