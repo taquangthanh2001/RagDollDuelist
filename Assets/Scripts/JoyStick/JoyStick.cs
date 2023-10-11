@@ -26,7 +26,7 @@ public class JoyStick : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (_instance == null)
             Instance = this;
@@ -37,7 +37,6 @@ public class JoyStick : MonoBehaviour
 
     public void PointerDown()
     {
-        // Commons.SetSatus(true);
         bgJoyStickPanel.SetActive(true);
         joystick.transform.position = Input.mousePosition;
         joystickBG.transform.position = Input.mousePosition;
@@ -48,11 +47,11 @@ public class JoyStick : MonoBehaviour
 
     public void Drag(BaseEventData baseEventData)
     {
-        PointerEventData pointerEventData = baseEventData as PointerEventData;
-        Vector2 dragPos = pointerEventData.position;
+        var pointerEventData = baseEventData as PointerEventData;
+        var dragPos = pointerEventData.position;
         joystickVec = (dragPos - joystickTouchPos).normalized;
 
-        float joystickDist = Vector2.Distance(dragPos, joystickTouchPos);
+        var joystickDist = Vector2.Distance(dragPos, joystickTouchPos);
 
         if (joystickDist < joystickRadius)
         {
@@ -69,7 +68,6 @@ public class JoyStick : MonoBehaviour
 
     public void PointerUp()
     {
-        // Commons.SetSatus(false);
         isMoveByJoystick = false;
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOriginalPos;
