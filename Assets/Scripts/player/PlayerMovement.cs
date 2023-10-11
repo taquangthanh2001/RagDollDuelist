@@ -52,9 +52,8 @@ namespace Player
             }
             else
             {
-                anim.Play("idle");
+                anim.Play($"idle");
             }
-
             base.MoveByTarget();
         }
 

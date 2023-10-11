@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class WeaponEnemy : Weapon
+    public class WeaponEnemy : Base.Weapon
     {
         protected override void OnCollisionEnter2D(Collision2D other)
         {

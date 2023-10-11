@@ -5,12 +5,12 @@ using UnityEngine.Serialization;
 public class JoyStick : MonoBehaviour
 {
     [SerializeField] protected GameObject joystick;
-    [SerializeField] protected GameObject joystickBG;
+    [FormerlySerializedAs("joystickBG")] [SerializeField] protected GameObject joystickBg;
     [FormerlySerializedAs("panel")] [SerializeField] protected GameObject bgJoyStickPanel;
     internal Vector2 joystickVec;
-    private Vector2 joystickTouchPos;
-    private Vector2 joystickOriginalPos;
-    private float joystickRadius;
+    private Vector2 _joystickTouchPos;
+    private Vector2 _joystickOriginalPos;
+    private float _joystickRadius;
     internal Vector2 joystickVecDf;
     internal Vector2 joystickVecMove;
 
@@ -21,7 +21,7 @@ public class JoyStick : MonoBehaviour
     public static JoyStick Instance
     {
         get => _instance;
-        private set { _instance = value; }
+        private set => _instance = value;
     }
 
 
@@ -31,16 +31,16 @@ public class JoyStick : MonoBehaviour
         if (_instance == null)
             Instance = this;
 
-        joystickOriginalPos = joystickBG.transform.position;
-        joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 2.5f;
+        _joystickOriginalPos = joystickBg.transform.position;
+        _joystickRadius = joystickBg.GetComponent<RectTransform>().sizeDelta.y / 2.5f;
     }
 
     public void PointerDown()
     {
         bgJoyStickPanel.SetActive(true);
         joystick.transform.position = Input.mousePosition;
-        joystickBG.transform.position = Input.mousePosition;
-        joystickTouchPos = Input.mousePosition;
+        joystickBg.transform.position = Input.mousePosition;
+        _joystickTouchPos = Input.mousePosition;
         joystickVecDf = joystick.GetComponent<RectTransform>().anchoredPosition;
         isMoveByJoystick = true;
     }
@@ -48,19 +48,22 @@ public class JoyStick : MonoBehaviour
     public void Drag(BaseEventData baseEventData)
     {
         var pointerEventData = baseEventData as PointerEventData;
-        var dragPos = pointerEventData.position;
-        joystickVec = (dragPos - joystickTouchPos).normalized;
-
-        var joystickDist = Vector2.Distance(dragPos, joystickTouchPos);
-
-        if (joystickDist < joystickRadius)
+        if (pointerEventData != null)
         {
-            joystick.transform.position = joystickTouchPos + joystickVec * joystickDist;
-        }
+            var dragPos = pointerEventData.position;
+            joystickVec = (dragPos - _joystickTouchPos).normalized;
 
-        else
-        {
-            joystick.transform.position = joystickTouchPos + joystickVec * joystickRadius;
+            var joystickDist = Vector2.Distance(dragPos, _joystickTouchPos);
+
+            if (joystickDist < _joystickRadius)
+            {
+                joystick.transform.position = _joystickTouchPos + joystickVec * joystickDist;
+            }
+
+            else
+            {
+                joystick.transform.position = _joystickTouchPos + joystickVec * _joystickRadius;
+            }
         }
 
         joystickVecMove = joystick.GetComponent<RectTransform>().anchoredPosition;
@@ -70,8 +73,8 @@ public class JoyStick : MonoBehaviour
     {
         isMoveByJoystick = false;
         joystickVec = Vector2.zero;
-        joystick.transform.position = joystickOriginalPos;
-        joystickBG.transform.position = joystickOriginalPos;
+        joystick.transform.position = _joystickOriginalPos;
+        joystickBg.transform.position = _joystickOriginalPos;
         bgJoyStickPanel.SetActive(false);
     }
 }
