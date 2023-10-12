@@ -14,6 +14,7 @@ namespace SO
         public struct WeaponData
         {
             public int id;
+            public string nameWeapon;
             public Sprite bgWeapon;
         }
 

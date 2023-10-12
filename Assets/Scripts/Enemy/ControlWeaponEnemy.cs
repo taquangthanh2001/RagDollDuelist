@@ -5,7 +5,6 @@ namespace Enemy
 {
     public class ControlWeaponEnemy : MonoBehaviour
     {
-        int speed = 300;
         [SerializeField] protected Transform weapon;
         [SerializeField] protected Transform hipEnemy;
 

@@ -18,25 +18,26 @@ namespace Player
         internal float timeCdJump = -1f;
         internal bool isJumpBar = true;
 
-        protected static PlayerMovement instance;
+        private static PlayerMovement _instance;
 
         public static PlayerMovement Instance
         {
-            get => instance;
-            protected set { value = instance; }
+            get => _instance;
+            private set => _instance = value;
         }
 
         protected override void Start()
         {
             base.Start();
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
             }
         }
 
         protected override void MoveByTarget()
         {
+            if (!JoyStick.Instance.isMoveByJoystick) return;
             if (movementJoystick.joystickVec.y != 0)
             {
                 if (movementJoystick.joystickVecMove.x > movementJoystick.joystickVecDf.x)
@@ -54,6 +55,7 @@ namespace Player
             {
                 anim.Play($"idle");
             }
+
             base.MoveByTarget();
         }
 
@@ -66,6 +68,7 @@ namespace Player
             {
                 JumpBarPlayer.Instance.SetStatusActiveJumpBar(JumpBarPlayer.StatusJump.ToJump);
             }
+
             if (movementJoystick.joystickVecMove.y < movementJoystick.joystickVecDf.y)
                 JumpBarPlayer.Instance.SetStatusActiveJumpBar(JumpBarPlayer.StatusJump.Cancel);
 

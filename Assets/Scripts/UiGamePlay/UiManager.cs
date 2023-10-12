@@ -1,12 +1,13 @@
+using Base;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
-namespace Resources.Scripts.UiGamePlay
+namespace UiGamePlay
 {
     public class ActionButton : MonoBehaviour
     {
         [SerializeField] private Button btnSkinButton;
-        GameObject _go;
 
         private void Start()
         {
@@ -15,8 +16,7 @@ namespace Resources.Scripts.UiGamePlay
 
         private void OnClickSkinBtn()
         {
-            _go = UnityEngine.Resources.Load("Prefabs/Shop") as GameObject;
-            Instantiate(_go, transform.position + Vector3.up, Quaternion.identity);
+            UiBase.Instance.ShowPrefab(GameConst.SkinPlayer);
         }
     }
 }

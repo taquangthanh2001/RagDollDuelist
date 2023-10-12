@@ -42,11 +42,12 @@ public class JoyStick : MonoBehaviour
         joystickBg.transform.position = Input.mousePosition;
         _joystickTouchPos = Input.mousePosition;
         joystickVecDf = joystick.GetComponent<RectTransform>().anchoredPosition;
-        isMoveByJoystick = true;
+        //isMoveByJoystick = true;
     }
 
     public void Drag(BaseEventData baseEventData)
     {
+        isMoveByJoystick = true;
         var pointerEventData = baseEventData as PointerEventData;
         if (pointerEventData != null)
         {

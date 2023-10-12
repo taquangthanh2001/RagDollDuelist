@@ -6,8 +6,10 @@ public class HpBase : MonoBehaviour
     [SerializeField] protected Transform hip;
     protected RectTransform rectTransform;
     protected Slider slider;
-    protected const float hpMax = 100;
-    protected float currentHp = 0f;
+    protected const float hpMax = 100f;
+    protected float currentHp = 100f;
+
+    private bool _isLostHp = false;
 
     protected virtual void Start()
     {
@@ -16,7 +18,7 @@ public class HpBase : MonoBehaviour
         slider = transform.GetComponent<Slider>();
     }
 
-    void Update()
+   protected virtual void Update()
     {
         if (JoyStick.Instance.isMoveByJoystick)
         {
@@ -24,13 +26,10 @@ public class HpBase : MonoBehaviour
         }
     }
 
-    internal void HpBar(float hpLost)
+    internal virtual void HpBar(float hpLost)
     {
-        if (currentHp < 1f)
-            currentHp = hpMax - hpLost;
-        else
-            currentHp -= hpLost;
-
+        currentHp = _isLostHp ? currentHp -= hpLost : hpMax - hpLost;
+        _isLostHp = true;
         var value = currentHp / 100;
         slider.value = value;
     }

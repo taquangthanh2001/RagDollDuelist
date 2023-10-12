@@ -1,3 +1,7 @@
+using Base;
+using UnityEngine;
+using Utils;
+
 namespace Enemy
 {
     public class HpEnemy : HpBase
@@ -16,7 +20,16 @@ namespace Enemy
             {
                 _instance = this;
             }
+
             base.Start();
+        }
+
+        internal override void HpBar(float hpLost)
+        {
+            base.HpBar(hpLost);
+            if (!(currentHp < 1)) return;
+            var obj = UiBase.Instance.ShowPrefab(GameConst.EndGame);
+            obj.GetComponent<EndGame>().SetStatus(StatusGame.Win);
         }
     }
 }

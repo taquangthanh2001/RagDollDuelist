@@ -13,6 +13,7 @@ public class arms : MonoBehaviour
 
     void Update()
     {
+        if (!JoyStick.Instance.isMoveByJoystick) return;
         Vector3 playerPos = JoyStick.Instance.joystickVecMove;
         Vector3 difference = playerPos - (Vector3)JoyStick.Instance.joystickVecDf;
         float rotationZ = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;

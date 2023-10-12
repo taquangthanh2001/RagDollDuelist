@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Base;
 using EnhancedUI.EnhancedScroller;
 using SO;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace UiGamePlay.Skin
         [SerializeField] protected EnhancedScroller enhancedScroller;
         [SerializeField] protected ShopCellView cellView;
         [SerializeField] protected Button btnClose;
+        [SerializeField] protected Button btnTest;
         [SerializeField] protected SkinPlayerSo skinPlayerSo;
         [SerializeField] protected WeaponSo weaponSo;
 
@@ -28,6 +30,7 @@ namespace UiGamePlay.Skin
             btnClose.onClick.AddListener(OnClickClose);
             btnWeapon.onClick.AddListener(OnClickSwitch);
             btnChar.onClick.AddListener(OnClickSwitch);
+            btnTest.onClick.AddListener(OnClickTestBtn);
             enhancedScroller.Delegate = this;
             LoadData();
         }
@@ -94,6 +97,10 @@ namespace UiGamePlay.Skin
         {
             isSwitchData = !isSwitchData;
             LoadData();
+        }
+        private static void OnClickTestBtn()
+        {
+            UiBase.Instance.ShowPrefab("Prefabs/Shop");
         }
     }
 }
