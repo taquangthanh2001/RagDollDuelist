@@ -2,6 +2,7 @@ using System;
 using SO;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 using Random = UnityEngine.Random;
 
 namespace Player
@@ -21,7 +22,9 @@ namespace Player
         [SerializeField] protected SpriteRenderer imgLegL2;
 
 
-        [SerializeField] private SkinPlayerSo _skinPlayerSo;
+        // [SerializeField] private SkinPlayerSo _skinPlayerSo;
+
+        protected UserData _user;
 
         private static LoadUiPlayer _instance;
 
@@ -37,6 +40,9 @@ namespace Player
             {
                 Instance = this;
             }
+
+            _user = Commons.GetUserData();
+            LoadDisplayPlayer(_user.IdSkin);
         }
 
         public void LoadDisplayPlayer(int idSkin)
@@ -44,9 +50,10 @@ namespace Player
             var id = idSkin;
             if (id == 0)
             {
-                id = Random.Range(1,_skinPlayerSo.GetAllData().Count +1);
+                id = Random.Range(1,LoadDataSo.Instance.GetSkinPlayer().GetAllData().Count +1);
             }
-            var _data = _skinPlayerSo.GetSkinById(id);
+            _user.IdSkin = id;
+            var _data = LoadDataSo.Instance.GetSkinPlayer().GetSkinById(id);
             imgFace.sprite = _data.bgHead;
             imgBody.sprite = _data.bgBody;
             imgHip.sprite = _data.bgHip;
@@ -54,6 +61,7 @@ namespace Player
             imgHandR2.sprite = imgHandL2.sprite = _data.bgAsm2;
             imgLegR1.sprite = imgLegL1.sprite = _data.bgLeg1;
             imgLegR2.sprite = imgLegL2.sprite = _data.bgLeg2;
+            Commons.SetUserData(_user);
         }
     }
 }

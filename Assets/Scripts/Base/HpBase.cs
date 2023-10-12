@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 public class HpBase : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class HpBase : MonoBehaviour
 
     internal virtual void HpBar(float hpLost)
     {
+        if (StatusInGame.Status == StatusGame.Pause) return;
         currentHp = _isLostHp ? currentHp -= hpLost : hpMax - hpLost;
         _isLostHp = true;
         var value = currentHp / 100;

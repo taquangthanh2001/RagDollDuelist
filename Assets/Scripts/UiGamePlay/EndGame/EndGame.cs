@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
 
@@ -20,6 +21,8 @@ public class EndGame : MonoBehaviour
     private void OnClickClose()
     {
         Destroy(gameObject);
+        StatusInGame.Status = StatusGame.Win;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SetStatus(StatusGame statusGame)

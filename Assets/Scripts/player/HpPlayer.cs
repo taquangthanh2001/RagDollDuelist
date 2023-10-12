@@ -8,6 +8,8 @@ namespace Player
     {
         private static HpPlayer _instance;
 
+        protected GameObject endGameObj = null;
+
         public static HpPlayer Instance
         {
             get => _instance;
@@ -28,8 +30,10 @@ namespace Player
         {
             base.HpBar(hpLost);
             if (!(currentHp < 1)) return;
-            var obj = UiBase.Instance.ShowPrefab(GameConst.EndGame);
-            obj.GetComponent<EndGame>().SetStatus(StatusGame.Lose);
+            if (endGameObj != null) return;
+            StatusInGame.Status = StatusGame.Pause;
+            endGameObj = UiBase.Instance.ShowPrefab(GameConst.EndGame);
+            endGameObj.GetComponent<EndGame>().SetStatus(StatusGame.Lose);
         }
     }
 }

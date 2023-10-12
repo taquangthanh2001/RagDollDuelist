@@ -5,6 +5,7 @@ using SO;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Utils;
 
 namespace UiGamePlay.Skin
 {
@@ -13,9 +14,8 @@ namespace UiGamePlay.Skin
         [SerializeField] protected EnhancedScroller enhancedScroller;
         [SerializeField] protected ShopCellView cellView;
         [SerializeField] protected Button btnClose;
-        [SerializeField] protected Button btnTest;
-        [SerializeField] protected SkinPlayerSo skinPlayerSo;
-        [SerializeField] protected WeaponSo weaponSo;
+        // [SerializeField] protected SkinPlayerSo skinPlayerSo;
+        // [SerializeField] protected WeaponSo weaponSo;
 
         [SerializeField] protected Button btnWeapon;
         [SerializeField] protected Button btnChar;
@@ -30,7 +30,6 @@ namespace UiGamePlay.Skin
             btnClose.onClick.AddListener(OnClickClose);
             btnWeapon.onClick.AddListener(OnClickSwitch);
             btnChar.onClick.AddListener(OnClickSwitch);
-            btnTest.onClick.AddListener(OnClickTestBtn);
             enhancedScroller.Delegate = this;
             LoadData();
         }
@@ -40,7 +39,7 @@ namespace UiGamePlay.Skin
             datas = new List<ShopData>();
             if (isSwitchData)
             {
-                var data = skinPlayerSo.GetAllData();
+                var data = LoadDataSo.Instance.GetSkinPlayer().GetAllData();
                 datas.Add(new ShopData { id = 0 });
                 foreach (var i in data)
                 {
@@ -49,7 +48,7 @@ namespace UiGamePlay.Skin
             }
             else
             {
-                var data = weaponSo.GetAllData();
+                var data = LoadDataSo.Instance.GetWeaponSo().GetAllData();
                 datas.Add(new ShopData { id = 0 });
                 foreach (var i in data)
                 {
@@ -97,10 +96,6 @@ namespace UiGamePlay.Skin
         {
             isSwitchData = !isSwitchData;
             LoadData();
-        }
-        private static void OnClickTestBtn()
-        {
-            UiBase.Instance.ShowPrefab("Prefabs/Shop");
         }
     }
 }

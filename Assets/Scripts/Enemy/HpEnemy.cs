@@ -7,6 +7,7 @@ namespace Enemy
     public class HpEnemy : HpBase
     {
         private static HpEnemy _instance;
+        protected GameObject endGameObj = null;
 
         public static HpEnemy Instance
         {
@@ -28,8 +29,10 @@ namespace Enemy
         {
             base.HpBar(hpLost);
             if (!(currentHp < 1)) return;
-            var obj = UiBase.Instance.ShowPrefab(GameConst.EndGame);
-            obj.GetComponent<EndGame>().SetStatus(StatusGame.Win);
+            if (endGameObj != null) return;
+            StatusInGame.Status = StatusGame.Pause;
+            endGameObj = UiBase.Instance.ShowPrefab(GameConst.EndGame);
+            endGameObj.GetComponent<EndGame>().SetStatus(StatusGame.Win);
         }
     }
 }

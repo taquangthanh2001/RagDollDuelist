@@ -47,7 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player\HpPlayer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-     <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\SmallList.cs" />
      <Compile Include="Assets\Scripts\Weapon\Arrow.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -60,30 +59,35 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\Scripts\Player\LoadUiPlayer.cs" />
+     <Compile Include="Assets\Scripts\Utils\SessionPref.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-     <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\IEnhancedScrollerDelegate.cs" />
      <Compile Include="Assets\Scripts\Player\playerController.cs" />
+     <Compile Include="Assets\Scripts\Utils\StatusInGame.cs" />
+     <Compile Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins\SmallList.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+     <Compile Include="Assets\Scripts\Utils\GameConst.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+     <Compile Include="Assets\Scripts\Utils\Commons.cs" />
+     <Compile Include="Assets\Scripts\Utils\LoadData.cs" />
+     <Compile Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins\EnhancedScroller.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\Scripts\UiGamePlay\Skin\ShopController.cs" />
      <Compile Include="Assets\Scripts\ballBound.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
      <Compile Include="Assets\Scripts\UiGamePlay\UiManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
-     <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\EnhancedScrollerCellView.cs" />
-     <Compile Include="Assets\Utils\Enum.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\Scripts\Enemy\ragdollEnemyWalk.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\Scripts\Player\WeaponPlayer.cs" />
+     <Compile Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins\Tween.cs" />
+     <Compile Include="Assets\Scripts\Utils\LoadDataSo.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Scripts\Enemy\WeaponEnemy.cs" />
-     <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\Tween.cs" />
      <Compile Include="Assets\Scripts\Player\ControlWeapon.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -95,19 +99,20 @@
      <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Base\Weapon.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-     <Compile Include="Assets\Utils\GameConst.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+     <Compile Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins\IEnhancedScrollerDelegate.cs" />
+     <Compile Include="Assets\Scripts\Utils\ModelData.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets\Scripts\Base\UiBase.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\UiGamePlay\EndGame\EndGame.cs" />
-     <Compile Include="Assets\Utils\EnhancedScroller v2\Plugins\EnhancedScroller.cs" />
-     <Compile Include="Assets\Utils\Model.cs" />
      <Compile Include="Assets\Scripts\Enemy\HpEnemy.cs" />
+     <Compile Include="Assets\Scripts\Utils\Enum.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
      <Compile Include="Assets\ScrollerData.cs" />
      <Compile Include="Assets\Scripts\grab.cs" />
+     <Compile Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins\EnhancedScrollerCellView.cs" />
      <Compile Include="Assets\Scripts\Player\JumpBarPlayer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -116,7 +121,6 @@
      <Compile Include="Assets\enemyIdle.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
      <Compile Include="Assets\Scripts\SO\SkinPlayerSo.cs" />
-     <Compile Include="Assets\Utils\Commons.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\Scripts\Weapon\ArcheryArrow.cs" />
@@ -124,10 +128,10 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Sprites\Art\character DOLL PLAYGROUND\character\android ver2" />
-     <None Include="Assets\Utils\EnhancedScroller v2\upgrading from 1.x to 2.x.txt" />
-     <Folder Include="Assets\Utils\EnhancedScroller v2\Plugins" />
+     <None Include="Assets\Scripts\Utils\EnhancedScroller v2\upgrading from 1.x to 2.x.txt" />
+     <Folder Include="Assets\Scripts\Utils\EnhancedScroller v2\Plugins" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-     <None Include="Assets\Utils\EnhancedScroller v2\ChangeLog.txt" />
+     <None Include="Assets\Scripts\Utils\EnhancedScroller v2\ChangeLog.txt" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
      <Folder Include="Assets\Sprites\Art\character DOLL PLAYGROUND\character\grey" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -140,8 +144,8 @@
      <Folder Include="Assets\Assets\mixed_crate_one" />
      <Folder Include="Assets\Animations" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
-     <None Include="Assets\Utils\EnhancedScroller v2\Tutorials\readme.txt" />
-     <Folder Include="Assets\Utils" />
+     <None Include="Assets\Scripts\Utils\EnhancedScroller v2\Tutorials\readme.txt" />
+     <Folder Include="Assets\Scripts\Utils" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -170,7 +174,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-     <Folder Include="Assets\SOData" />
+     <Folder Include="Assets\Resources\SOData" />
      <Folder Include="Assets\Assets\BackGrounds\parallax-industrial-pack_0\parallax-industrial-pack\layers" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -183,7 +187,7 @@
      <Folder Include="Assets\Scripts\UiGamePlay\EndGame" />
      <Folder Include="Assets\Animations\Animator" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources\Sprite Assets" />
-     <Folder Include="Assets\Utils\EnhancedScroller v2\Documentation" />
+     <Folder Include="Assets\Scripts\Utils\EnhancedScroller v2\Documentation" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Sprites\Art\character DOLL PLAYGROUND\character\android ver2\head" />
@@ -206,8 +210,8 @@
      <Folder Include="Assets\Sprites\Art\character DOLL PLAYGROUND\character\android ver2\body1\nhip tim chet" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\Sprites\Art\character DOLL PLAYGROUND\character\android ver2\body1" />
-     <Folder Include="Assets\Utils\EnhancedScroller v2\Tutorials" />
-     <None Include="Assets\Utils\EnhancedScroller v2\readme.txt" />
+     <Folder Include="Assets\Scripts\Utils\EnhancedScroller v2\Tutorials" />
+     <None Include="Assets\Scripts\Utils\EnhancedScroller v2\readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Resources\Prefabs" />
      <Folder Include="Assets\Assets" />
@@ -223,7 +227,7 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
-     <Folder Include="Assets\Utils\EnhancedScroller v2" />
+     <Folder Include="Assets\Scripts\Utils\EnhancedScroller v2" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -466,6 +470,9 @@
      </Reference>
      <Reference Include="Unity.Collections.LowLevel.ILSupport">
      <HintPath>C:\UnityProjects\Unity-2D-Ragdoll-Physics-Game-Demo\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\UnityProjects\Unity-2D-Ragdoll-Physics-Game-Demo\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
